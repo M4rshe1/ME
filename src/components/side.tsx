@@ -35,11 +35,11 @@ const Side = () => {
                                 className="font-bold mt-4"   
                                 >{skill.name}</p>
                                 <div
-                                    className="bg-gray-200 dark:bg-gray-700 rounded-full h-8 flex items-center w-full"
+                                    className="bg-gray-200 dark:bg-gray-700 rounded-full h-6 flex items-center w-full"
                                 >
                                     <div
                                         style={{width: skill.level + "%"}}
-                                        className={"font-bold text-black bg-violet-300 dark:bg-orange-300 rounded-full h-8 flex items-center justify-center transition-all duration-500 ease-in-out"}
+                                        className={"font-bold text-black rounded-full h-6 flex items-center justify-center transition-all duration-500 ease-in-out " + skill.colorLanguage + "-bg"}
                                     >
                                         {skill.level + "%"}
                                     </div>

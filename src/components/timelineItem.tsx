@@ -1,5 +1,3 @@
-import React from "react";
-
 const TimelineItem = ({year, title, duration, details}) => {
     return (
         <ol className="flex flex-col md:flex-row relative border-l border-gray-200 dark:border-gray-700">

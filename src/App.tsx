@@ -76,22 +76,16 @@ function App() {
                     <button
                         type="button"
                         onClick={handleThemeSwitch}
-                        className="absolute p-2 z-10 sm:right-4 right-5 top-16 sm:top-4 bg-violet-300 text-white dark:bg-orange-300 text-lg rounded-md"
+                        className="fixed p-2 z-10 sm:right-4 right-5 top-16 sm:top-4 bg-violet-300 text-white dark:bg-orange-300 text-lg rounded-md"
                     >
                         {theme === 'dark' ? sun : moon}
                     </button>
                     <Header/>
-                    <div
-                    className="flex lg:flex-row flex-col w-full justify-start relative gap-4 min-h-screen"
-                    >
-                        <div 
-                        className="flex flex-col justify-start lg:w-[400px]"
-                        >
+                    <div className="flex lg:flex-row flex-col w-full justify-start relative gap-4 min-h-screen">
+                        <div className="flex flex-col justify-start lg:w-[400px]">
                         <Side/>
                         </div>
-                        <div 
-                        className="flex flex-col justify-start relative md-content"
-                        >
+                        <div className="flex flex-col justify-start relative md-content">
                             <Routes>
                                 <Route path="/" element={<Home/>}/>
                                 <Route path="/projects" element={<Projects/>}/>

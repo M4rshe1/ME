@@ -2,6 +2,7 @@ import {useRef} from "react";
 import Title from "./title";
 import emailJS from '@emailjs/browser';
 
+
 const Contact = () => {
     const form = useRef();
     const serviceID = "service_wogrnim";
@@ -10,6 +11,8 @@ const Contact = () => {
 
     function handleFormSubmit(event: { preventDefault: () => void; }) {
         event.preventDefault();
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         emailJS.sendForm(serviceID, templateID, form.current, publicKey)
             .then(function () {
                 console.log('SUCCESS!');
@@ -22,12 +25,15 @@ const Contact = () => {
         );
     }
 
+ 
     return (
         <div
             className="flex flex-col mb-10 my-4 rounded bg-white dark:bg-gray-800 shadow-lg p-4 lg:w-[400px] w-full justify-start"
         >
             <div className="flex items-center w-full">
                 <form
+                    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                    // @ts-expect-error
                     ref={form}
                     action="/"
                     method="POST"
