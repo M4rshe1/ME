@@ -4,7 +4,7 @@
 
 .md-content > * {
     @apply rounded bg-white dark:bg-gray-800 shadow-lg p-4 items-start w-full;
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
 }
 
 .md-component h1, .comp-title {
@@ -15,10 +15,10 @@
 }
 
 .md-content p {
-    @apply my-2 text-base font-normal text-gray-500 dark:text-gray-400;
+    @apply mt-2 text-base font-normal text-gray-500 dark:text-gray-400;
 }
 
-.md-content h2 {
+.md-content h2, .comp-title-h2 {
     @apply relative mt-4 mb-2 text-xl font-bold text-gray-800 dark:text-gray-100
     after:content-['##'] ml-8 hover:underline
     after:absolute after:left-[-2rem] after:top-[-0.5rem] after:font-bold after:mt-2
@@ -27,7 +27,7 @@
     cursor-pointer;
 }
 
-.md-content h3 {
+.md-content h3, .comp-title-h3 {
     @apply relative mt-4 mb-2 text-lg font-bold text-gray-800 dark:text-gray-100
     after:content-['###'] ml-10 hover:underline
     after:absolute after:left-[-2.5rem] after:top-[-0.5rem] after:font-bold after:mt-2
@@ -36,7 +36,7 @@
     cursor-pointer;
 }
 
-.md-content h4 {
+.md-content h4, .comp-title-h4 {
     @apply relative mt-4 mb-2 text-base font-bold text-gray-800 dark:text-gray-100
     after:content-['####'] ml-12 hover:underline
     after:absolute after:left-[-3rem] after:top-[-0.5rem] after:font-bold after:mt-2
@@ -45,7 +45,7 @@
     cursor-pointer;
 }
 
-.md-content h5 {
+.md-content h5, .comp-title-h5 {
     @apply relative mt-4 mb-2 text-sm font-bold text-gray-800 dark:text-gray-100
     after:content-['#####'] ml-14 hover:underline
     after:absolute after:left-[-3.5rem] after:top-[-0.5rem] after:font-bold after:mt-2
@@ -54,7 +54,7 @@
     cursor-pointer;
 }
 
-.md-content h6 {
+.md-content h6, .comp-title-h6 {
     @apply relative mt-4 mb-2 text-xs font-bold text-gray-800 dark:text-gray-100
     after:content-['######'] ml-16 hover:underline
     after:absolute after:left-[-4rem] after:top-[-0.5rem] after:font-bold after:mt-2
@@ -63,7 +63,7 @@
     cursor-pointer;
 }
 
-.md-content a {
+.md-content a, .comp-link {
     @apply text-violet-300 dark:text-orange-300 hover:underline;
 }
 

@@ -84,8 +84,9 @@
 // export default Projects
 
 
-import { useState, useEffect } from 'react';
+import {useEffect, useState} from 'react';
 import ProjectItem from '../components/projectItem.tsx';
+import Title from "../components/title.tsx";
 
 const GITHUB_REPOS_API = 'https://api.github.com/users/M4rshe1/repos';
 
@@ -112,14 +113,22 @@ async function getRepoLanguages(repo: never) {
 }
 
 async function reformatGitHubRepos(repos: any) {
-    const reformattedRepos = [];
+    let reformattedRepos = [];
+
+    // order by updated newest to oldest
+    repos = repos.sort((a: { updated_at: string; }, b: { updated_at: string; }) => {
+        const dateA = new Date(a.updated_at);
+        const dateB = new Date(b.updated_at);
+        return dateB - dateA; // Change to dateA - dateB for ascending order
+    });
+
     for (const repo of repos) {
         try {
             const updated = new Date(repo['updated_at']);
-            const updatedString = `${updated.getDate()} ${updated.toLocaleString('default', { month: 'short' })} ${updated.getFullYear()}`;
-            
+            const updatedString = `${updated.getDate()} ${updated.toLocaleString('default', {month: 'short'})} ${updated.getFullYear()}`;
+
             // const updatedString = `${updated.toLocaleString('default', { month: 'long' })} ${updated.getFullYear()}`;
-            
+
             const languages = await getRepoLanguages(repo['full_name']);
             reformattedRepos.push({
                 name: repo['full_name'],
@@ -131,11 +140,11 @@ async function reformatGitHubRepos(repos: any) {
             });
         } catch (error) {
             console.error('Error fetching languages for repo:', repo['full_name'], error);
-            // Handle error as needed, like pushing a default or empty value for languages
         }
     }
     return reformattedRepos;
 }
+
 
 const Projects = () => {
     const [repositories, setRepositories] = useState([]);
@@ -150,22 +159,39 @@ const Projects = () => {
                 console.error('Error fetching repositories:', error);
             }
         }
+
         fetchData().then(r => console.log(r));
     }, []);
 
     return (
         <>
-            {repositories.map((repo) => (
-                <ProjectItem
-                    key={repo.name}
-                    name={repo.name}
-                    description={repo.description}
-                    url={repo.url}
-                    languages={repo._languages}
-                    updated={repo.updated}
-                    archived={repo.archived}
-                />
-            ))}
+            <div>
+                <Title>
+                    Projects
+                </Title>
+            </div>
+            {
+                repositories.map((repo:
+                                      {
+                                          name: string;
+                                          description: string;
+                                          url: string;
+                                          _languages: { name: string; percentage: number; }[];
+                                          updated: string;
+                                          archived: boolean;
+                                      }
+                ) => (
+                    <ProjectItem
+                        key={repo.name}
+                        name={repo.name}
+                        description={repo.description}
+                        url={repo.url}
+                        languages={repo._languages}
+                        updated={repo.updated}
+                        archived={repo.archived}
+                    />
+                ))
+            }
         </>
     );
 };

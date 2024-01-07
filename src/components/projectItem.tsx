@@ -48,22 +48,21 @@ const ProjectItem = (
                 {repository.description}
             </p>
             <div
-                className="w-full bg-gray-200 dark:bg-gray-700 h-6 rounded-full flex items-center justify-center overflow-hidden first:rounded-l-full last:rounded-r-full"
+                className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full flex items-center justify-center overflow-hidden first:rounded-l-full last:rounded-r-full"
             >
                 {
                     repository.languages.map((language: { name: string, percentage: number }) => (
                         <div
                             key={language.name}
-                            className={"h-6 flex items-center justify-center transition-all duration-500 ease-in-out " + replaceWithUnderscore(language.name) + "-bg"}
+                            className={"h-2 flex items-center justify-center transition-all duration-500 ease-in-out " + replaceWithUnderscore(language.name) + "-bg"}
                             style={{width: language.percentage + "%"}}
                         >
-                            {language.percentage + "%"}
                         </div>
                     ))
                 }
             </div>
             <div
-                className="grid lg:grid-cols-3 gap-4 mt-2"
+                className="grid lg:grid-cols-3 gap-1 mt-2"
             >
                 {
                     repository.languages.map((language: { name: string, percentage: number }) => (
@@ -71,14 +70,19 @@ const ProjectItem = (
                             className="flex items-center justify-start"
                         >
                             &nbsp;
-                            <p
+                            <span
                                 key={language.name}
-                                className={"h-1 aspect-square" + replaceWithUnderscore(language.name) + "-bg"}
+                                className={"h-3 aspect-square rounded-full " + replaceWithUnderscore(language.name) + "-bg"}
                             >
-                            </p>
-                            <span>{language.name} <span
-                                className="mt-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                                
+                            </span>
+                            <span
+                            className="ml-2"
                             >
+                                {language.name}
+                                <span
+                                    className="text-sm ml-1 font-normal leading-none text-gray-400 dark:text-gray-500"
+                                >
                                 {language.percentage + "%"}
                             </span>
                             </span>

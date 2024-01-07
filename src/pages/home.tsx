@@ -27,11 +27,6 @@ const Home = () => {
                 {content}
             </MdComp>
             <Timeline/>
-            <div>
-                <Title>
-                    Projects
-                </Title>
-            </div>
             <Projects/>
         </>
     )
