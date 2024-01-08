@@ -10,6 +10,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Side from "./components/side.tsx";
 import NotFound from "./pages/404.tsx";
+import Project from "./pages/project.tsx";
 
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
                     <button
                         type="button"
                         onClick={handleThemeSwitch}
-                        className="fixed p-2 z-10 sm:right-4 right-5 top-16 sm:top-4 bg-violet-300 text-white dark:bg-orange-300 text-lg rounded-md"
+                        className="absolute p-2 z-10 right-8 top-36 sm:top-9 bg-violet-300 text-white dark:bg-orange-300 text-lg rounded-md"
                     >
                         {theme === 'dark' ? sun : moon}
                     </button>
@@ -85,10 +86,11 @@ function App() {
                         <div className="flex flex-col justify-start lg:w-[400px]">
                         <Side/>
                         </div>
-                        <div className="flex flex-col justify-start relative md-content">
+                        <div className="flex flex-col justify-start relative md-content w-full">
                             <Routes>
                                 <Route path="/" element={<Home/>}/>
-                                <Route path="/projects" element={<Projects/>}/>
+                                <Route path="/projects" element={<Projects head={undefined}/>}/>
+                                <Route path="/projects/:repositoryID" element={<Project/>}/>
                                 <Route path="/posts" element={<Posts/>}/>
                                 <Route path="/*" element={<NotFound/>}/>
                             </Routes>

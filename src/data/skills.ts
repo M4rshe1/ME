@@ -5,9 +5,14 @@ export default [
         "colorLanguage": "html"
     },
     {
+        "name": "SQL",
+        "level": 50,
+        "colorLanguage": "sql"
+    },
+    {
         "name": "React",
         "level": 30,
-        "colorLanguage": "javascript"
+        "colorLanguage": "typescript"
     },
     {
         "name": "Python",

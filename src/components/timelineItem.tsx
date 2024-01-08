@@ -1,4 +1,13 @@
-const TimelineItem = ({year, title, duration, details}) => {
+import React from "react";
+
+interface TimelineItemProps {
+    year: string;
+    title: string;
+    duration: string;
+    details: string;
+}
+
+const TimelineItem: React.FC<TimelineItemProps> = ({year, title, duration, details}) => {
     return (
         <ol className="flex flex-col md:flex-row relative border-l border-gray-200 dark:border-gray-700">
             <li className="ms-10 ml-4">

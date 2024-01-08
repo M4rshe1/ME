@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import Timeline from "../components/timeline.tsx";
 import MdComp from "../components/md-comp.tsx";
 import Projects from "./projects.tsx";
-import Title from "../components/title.tsx";
 
 const Home = () => {
     const [content, setContent] = useState("");
@@ -27,7 +26,9 @@ const Home = () => {
                 {content}
             </MdComp>
             <Timeline/>
-            <Projects/>
+            <Projects
+                head={3}
+            />
         </>
     )
 }

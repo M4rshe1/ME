@@ -1,14 +1,14 @@
-# This is a Demo Post
+# This is a Demo Post h1
 
-## This is a demo post
+## This is a demo post h2
 
-### This is a demo post
+### This is a demo post h3
 
-#### This is a demo post
+#### This is a demo post h4
 
-##### This is a demo post
+##### This is a demo post h5
 
-###### This is a demo post
+###### This is a demo post h6
 
 This is a demo post  
 This is a demo post  
@@ -24,20 +24,24 @@ This is a demo post
 
 1. This is a demo post
 2. This is a demo post
-3. This is a demo post
+3. This is a demo post  
+
+<br>
 
 | This is a demo post | This is a demo post |
 |---------------------|---------------------|
 | This is a demo post | This is a demo post |
 | This is a demo post | This is a demo post |
 
-**This is a demo post**  
-*This is a demo post*
-`This is a code sipped`
-```javascript
-console.log('This is a demo post')
-```
+**This is a demo post**    
+*This is a demo post*  
+`This is a code sipped`  
 
+
+```javascript  
+console.log('This is a demo post')  
+```  
+  
 ```python
 print('This is a demo post')
 ```
@@ -65,5 +69,5 @@ body {
 >> This is a demo post  
 >    
 
- [X] This is a demo post  
- [o] This is a demo post
+- [x] This is a demo post  
+- [ ] This is a demo post
