@@ -89,7 +89,7 @@ function App() {
                         <div className="flex flex-col justify-start relative md-content w-full">
                             <Routes>
                                 <Route path="/" element={<Home/>}/>
-                                <Route path="/projects" element={<Projects head={undefined}/>}/>
+                                <Route path="/projects" element={<Projects head={0}/>}/>
                                 <Route path="/projects/:repositoryID" element={<Project/>}/>
                                 <Route path="/posts" element={<Posts/>}/>
                                 <Route path="/*" element={<NotFound/>}/>

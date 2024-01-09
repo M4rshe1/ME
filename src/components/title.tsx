@@ -1,4 +1,4 @@
-const Title = ({children, subtitle = ""}: { children: string, subtitle: string }) => {
+const Title = ({children, subtitle = ""}: { children: string, subtitle?: string }) => {
     return (
         <>
             <h1

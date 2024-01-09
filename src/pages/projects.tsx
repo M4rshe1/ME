@@ -66,7 +66,7 @@ async function reformatGitHubRepos(repos: never[]) {
 }
 
 
-const Projects = ({head = 0}: { head : number}) => {
+const Projects = ({head = 0}: { head: number}) => {
     const [repositories, setRepositories] = useState<reformattedReposInterface[]>([]);
     const [loading, setLoading] = useState(true);
     const [repoLength, setRepoLength] = useState(0);
@@ -77,7 +77,7 @@ const Projects = ({head = 0}: { head : number}) => {
                 const reformattedRepos = await reformatGitHubRepos(repos);
                 setRepoLength(reformattedRepos.length)
                 // shorten the list to the amount specified in the head prop
-                if (head !== undefined) {
+                if (head !== 0) {
                     setRepositories(reformattedRepos.slice(0, head));
                 } else {
                     setRepositories(reformattedRepos);
@@ -95,44 +95,44 @@ const Projects = ({head = 0}: { head : number}) => {
         <>
             <div>
                 <Title
-                    subtitle={ repoLength > 0 && head > 0 ? `${head} of ${repoLength} repositories` : ""}
+                    subtitle={repoLength > 0 && head > 0 ? `${head} of ${repoLength} repositories` : ""}
                 >
                     Projects
                 </Title>
             </div>
-            {
-                loading ?
-                    <ProjectItem
-                        key={"loading"}
-                        name={"loading..."}
-                        description={"loading..."}
-                        url={"loading..."}
-                        languages={[]}
-                        updated={"loading..."}
-                        archived={false}
-                    />
-                    :
-                    repositories.map((repo:
-                                          {
-                                              name: string;
-                                              description: string;
-                                              url: string;
-                                              _languages: { name: string; percentage: number; }[];
-                                              updated: string;
-                                              archived: boolean;
-                                          }
-                    ) => (
+                {
+                    loading ?
                         <ProjectItem
-                            key={repo.name}
-                            name={repo.name}
-                            description={repo.description}
-                            url={repo.url}
-                            languages={repo._languages}
-                            updated={repo.updated}
-                            archived={repo.archived}
+                            key={"loading"}
+                            name={"loading..."}
+                            description={"loading..."}
+                            url={"loading..."}
+                            languages={[]}
+                            updated={"loading..."}
+                            archived={false}
                         />
-                    ))
-            }
+                        :
+                        repositories.map((repo:
+                                              {
+                                                  name: string;
+                                                  description: string;
+                                                  url: string;
+                                                  _languages: { name: string; percentage: number; }[];
+                                                  updated: string;
+                                                  archived: boolean;
+                                              }
+                        ) => (
+                            <ProjectItem
+                                key={repo.name}
+                                name={repo.name}
+                                description={repo.description}
+                                url={repo.url}
+                                languages={repo._languages}
+                                updated={repo.updated}
+                                archived={repo.archived}
+                            />
+                        ))
+                }
         </>
     );
 };
