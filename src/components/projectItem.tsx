@@ -33,7 +33,7 @@ const ProjectItem = (
                 className="flex items-center justify-between"
             >
                 <div
-                    className="flex items-center justify-start"
+                    className="flex sm:items-center justify-start sm:flex-row flex-col"
                 >
                     <Link
                         to={repository.url.replace("https://github.com/M4rshe1", "/projects")}
@@ -43,7 +43,7 @@ const ProjectItem = (
                         </h2>
                     </Link>
                     <span
-                        className="mt-2 ml-4 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                        className="sm:mt-2 sm:ml-4 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
                     >last update: {repository.updated}</span>
                 </div>
                 <a href={repository.url} target={"_blank"}>

@@ -96,6 +96,7 @@ const Projects = ({head = 0}: { head: number}) => {
             <div>
                 <Title
                     subtitle={repoLength > 0 && head > 0 ? `${head} of ${repoLength} repositories` : ""}
+                    link={"/projects"}
                 >
                     Projects
                 </Title>

@@ -1,18 +1,18 @@
 export default [
     {
         "name": "HTML/CSS/JS",
-        "level": 70,
+        "level": 50,
         "colorLanguage": "html"
     },
     {
-        "name": "SQL",
-        "level": 50,
-        "colorLanguage": "sql"
+        "name": "Powershell / batch",
+        "level": 40,
+        "colorLanguage": "powershell"
     },
     {
-        "name": "React",
-        "level": 30,
-        "colorLanguage": "typescript"
+        "name": "SQL",
+        "level": 40,
+        "colorLanguage": "sql"
     },
     {
         "name": "Python",
@@ -20,8 +20,13 @@ export default [
         "colorLanguage": "python"
     },
     {
-        "name": "C++",
-        "level": 10,
-        "colorLanguage": "c_"
+        "name": "React/NextJS",
+        "level": 30,
+        "colorLanguage": "typescript"
+    },
+    {
+        "name": "MS Office",
+        "level": 60,
+        "colorLanguage": "sql"
     }
 ]

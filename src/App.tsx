@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './pages/home';
 import Projects from './pages/projects';
 import Posts from "./pages/posts.tsx";
+import Post from "./pages/post.tsx";
 
 // Components
 import Header from './components/header';
@@ -91,7 +92,8 @@ function App() {
                                 <Route path="/" element={<Home/>}/>
                                 <Route path="/projects" element={<Projects head={0}/>}/>
                                 <Route path="/projects/:repositoryID" element={<Project/>}/>
-                                <Route path="/posts" element={<Posts/>}/>
+                                <Route path="/posts" element={<Posts head={0}/>}/>
+                                <Route path="/posts/:postID" element={<Post/>}/>
                                 <Route path="/*" element={<NotFound/>}/>
                             </Routes>
                         </div>

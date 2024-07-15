@@ -1,36 +1,63 @@
-import {useEffect, useState} from "react";
-import MdComp from "../components/md-comp.tsx";
+import posts from "../data/posts.json";
+import {Link} from "react-router-dom";
+import Title from "../components/title.tsx";
 
-// const fetchDirectory = async (path: string) => {
-//     const res = await fetch(path)
-//     return await res.text()
-// }
+interface interfacePosts {
+    title: string;
+    description: string;
+    date: string;
+    slug: string;
+}
 
-const Posts = () => {
-    const [content, setContent] = useState("");
+const Posts = ({head = 0}: { head: number }) => {
+    const postLength = posts.length;
+    
+    if (head > 0) {
+        posts.slice(0, head)
+    }
 
-    const mdFile = "demo";
-
-    useEffect(() => {
-        // fetchDirectory(`/content/posts`).then((req) => {
-        //     console.log(req)
-        //     }
-        // );
-        import((`../content/posts/${mdFile}.md`)).then((res) => {
-                fetch(res.default)
-                    .then((res) => res.text())
-                    .then((md) => {
-                        setContent(md);
-                    });
-            }
-        );
-    }, []);
 
     return (
         <>
-            <MdComp>
-                {content}
-            </MdComp>
+            <div>
+            
+                <Title
+                    subtitle={postLength > 0 && head > 0 && head < postLength? `${head} of ${postLength} posts` : ""}
+                link={"/posts"}
+                >
+                    Posts
+                </Title>
+            </div>
+            {
+                posts.map((post: interfacePosts, index) => {
+                    return (
+                        <div
+                            className="md-component"
+                            key={index}
+                        >
+                            <div
+                                className="flex sm:items-center justify-start sm:flex-row flex-col "
+                            >
+                                <Link
+                                    to={"/posts/" + post.slug}
+                                >
+                                    <h2>
+                                        {post.title}
+                                    </h2>
+                                </Link>
+                                <span
+                                    className="mt-2 sm:ml-4 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                                >Posted on: {
+                                    post.date
+                                }</span>
+                            </div>
+                            <p>
+                                {post.description}
+                            </p>
+                        </div>
+                    )
+                })
+            }
         </>
     )
 }

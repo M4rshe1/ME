@@ -23,7 +23,7 @@
     cursor-pointer;
 }
 
-.md-content h3, .comp-title-h3 {
+.md-content h3, .comp-title-h3, .comp-title-h3 p {
     @apply relative mt-4 mb-2 text-lg font-bold text-gray-800 dark:text-gray-100
     after:content-['###'] ml-10 hover:underline
     after:absolute after:left-[-2.5rem] after:top-[-0.5rem] after:font-bold after:mt-2

@@ -1,3 +1,11 @@
+---
+title: This is a demo post
+date: 04 Jan 2024
+tags: [demo]
+description: This is a demo post that shows all the markdown features
+archived: false
+---
+
 # This is a Demo Post h1
 
 ## This is a demo post h2
