@@ -29,7 +29,7 @@ async function getRepoLanguages(repo: string) {
     for (const key in languages) {
         formattedLanguages.push({
             name: key,
-            percentage: Math.round((languages[key] / total) * 100),
+            percentage: Math.ceil((languages[key] / total) * 100),
         });
     }
     return formattedLanguages;

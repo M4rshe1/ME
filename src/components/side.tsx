@@ -42,7 +42,7 @@ const Side = () => {
                         </div>
                         <span
                             className="ml-1"
-                        >Betriebsinformatiker</span>
+                        >Betriebsinformatiker/EFZ</span>
                     </p>
                     {/*className="text-violet-300 dark:text-orange-300 bg-violet-300 dark:bg-orange-300 rounded-full w-4 p-1 scale-150"*/}
                     <p
@@ -79,9 +79,9 @@ const Side = () => {
                             </svg>
                         </div>
                         <a
-                            href="mailto:colin.heggli@gmail.com"
-                            className="ml-1"
-                        >colin.heggli@gmail.com</a>
+                            href="mailto:colin@heggli.dev"
+                            className="ml-1 hover:text-violet-300 dark:hover:text-orange-300 transition duration-200 ease-in-out hover:underline"
+                        >colin@heggli.dev</a>
                     </p>
                 </div>
                 <Line/>
