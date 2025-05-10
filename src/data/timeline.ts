@@ -1,20 +1,17 @@
 export default [
-    {
-        year: "Today",
-        title: 'Apprentice Information Technician',
-        duration: 'Aug 2024 - Present',
-        details: "I am currently working in the Laporatory and the digitalisation department at Georg Fischer AG in Schaffhausen. I working on a few projects and I am learning a lot about data analysis and data science. Unter anderem arbeite ich da auch mit PowerBi"
-    },
-    {
-        year: "2023/2024",
-        title: 'Apprentice Information Technician',
-        duration: 'Aug 2023 - Jul 2024',
-        details: "I am currently working as an apprentice IT person (Betriebsinformatiker EFZ) at Georg Fischer AG in Schaffhausen. I am working in the IT department and I am responsible for the support of the employees. I am also working on projects and I am learning a lot about the IT infrastructure of a big company."
-    },
-    {
-        year: "2022/2023",
-        title: 'Wibilea Basis Year',
-        duration: 'Aug 2022 - Jul 2023',
-        details: "I attended the Wibilea Basis Year in Neuhausen. I learned a lot about the basics of IT and business."
-    }
-]
+  {
+    year: "Today",
+    title: "Information Technology Apprentice",
+    duration: "Aug 2024 - Present",
+    details: "Currently positioned in the Laboratory and Digitalization department at Georg Fischer AG, Schaffhausen. Working on various projects focused on data analysis and data science initiatives. Actively developing expertise in Microsoft Power BI and Power Platform implementation for business intelligence solutions."
+  }, {
+    year: "2023/2024",
+    title: "Information Technology Apprentice",
+    duration: "Aug 2023 - Jul 2024",
+    details: "Served as an IT Apprentice (Betriebsinformatiker EFZ) at Georg Fischer AG, Schaffhausen. Primary responsibilities included providing technical support to staff and managing IT infrastructure projects. Gained comprehensive exposure to enterprise-level IT systems and operations."
+  }, {
+    year: "2022/2023",
+    title: "Wibilea Foundation Year",
+    duration: "Aug 2022 - Jul 2023",
+    details: "Completed foundational training at Wibilea, Neuhausen. Acquired fundamental knowledge in information technology and business administration, establishing a strong technical foundation for future specialization."
+  }];
